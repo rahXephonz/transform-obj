@@ -5,13 +5,19 @@
   "private": true,
   "main": "src/main.ts",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "rollup -c",
+    "dev": "yarn build --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "type-fest": "^3.0.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@types/lodash": "^4.14.186",
     "@typescript-eslint/parser": "^4.29.0",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",

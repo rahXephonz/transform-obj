@@ -4,7 +4,7 @@ import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: ["src/index.ts"],
+    input: ["src/main.ts"],
     output: {
       dir: "dist",
       format: "esm",
@@ -22,10 +22,10 @@ export default [
     ],
 
     preserveModules: true,
-    external: [],
+    external: ["lodash"],
   },
   {
-    input: ["src/index.ts"],
+    input: ["src/main.ts"],
     output: [{ file: "dist/index.d.ts", format: "es" }],
     plugins: [
       dts({
