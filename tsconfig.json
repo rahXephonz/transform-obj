@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "module": "commonjs",
+    "module": "esnext",
+    "target": "esnext",
     "declaration": false,
     "moduleResolution": "node",
-    "target": "es2018",
-    "sourceMap": true,
-    "allowJs": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
