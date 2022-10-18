@@ -17,4 +17,12 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
   },
+  overrides: [
+    {
+      files: ["**/*.test.ts"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

@@ -31,7 +31,7 @@ const transformToSnakeCase = <T extends object>(obj: T): typeFest.SnakeCasedProp
 
 const transformToPascalCase = <T extends object>(obj: T): typeFest.PascalCasedPropertiesDeep<T> => {
   const result: T = _.transform<T, any>(obj, (acc, value, key, target) => {
-    const camelKey = _.isArray(target) ? key : _.upperCase(key as string);
+    const camelKey = _.isArray(target) ? key : _.upperCase(key as string).replace(/ /g, "_");
 
     acc[camelKey] = _.isObject(value) ? transformToPascalCase(value) : value;
   });
