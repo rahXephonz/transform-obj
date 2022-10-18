@@ -3,8 +3,6 @@
 <p>Allows you transform entire object data or datum</p>
 </div>
 
----
-
 <div align="center">
 
 <!-- prettier-ignore-start -->
