@@ -1,8 +1,8 @@
 {
   "name": "transform-obj",
   "version": "1.0.0",
-  "description": "transform your object",
-  "private": true,
+  "description": "transform your object or datum as you want",
+  "private": false,
   "main": "src/main.ts",
   "scripts": {
     "prepare": "husky install",
@@ -51,5 +51,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
