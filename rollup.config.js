@@ -26,7 +26,7 @@ export default [
   },
   {
     input: ["src/main.ts"],
-    output: [{ file: "dist/index.d.ts", format: "es" }],
+    output: [{ file: "dist/types/index.d.ts", format: "es" }],
     plugins: [
       dts({
         compilerOptions: {
