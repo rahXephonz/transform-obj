@@ -4,6 +4,11 @@
   "description": "transform your object or datum as you want",
   "private": false,
   "main": "src/main.ts",
+  "keywords": [
+    "transform",
+    "transform-obj",
+    "datum"
+  ],
   "scripts": {
     "prepare": "husky install",
     "build": "rollup -c",
