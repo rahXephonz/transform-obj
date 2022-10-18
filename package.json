@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "transform your object or datum as you want",
   "private": false,
+  "homepage": "https://github.com/ioofy/transform-obj",
+  "repository": "https://github.com/ioofy/transform-obj",
   "main": "dist/main.js",
   "types": "dist/index.d.ts",
   "keywords": [
