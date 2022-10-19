@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
+import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 import { terser } from "rollup-plugin-terser";
 
 export default [
@@ -7,7 +8,7 @@ export default [
     input: ["src/main.ts"],
     output: {
       dir: "dist",
-      format: "esm",
+      format: "cjs",
       sourcemap: true,
     },
     plugins: [
@@ -19,6 +20,7 @@ export default [
         module: true,
         toplevel: false,
       }),
+      optimizeLodashImports(),
     ],
 
     preserveModules: true,
@@ -26,7 +28,7 @@ export default [
   },
   {
     input: ["src/main.ts"],
-    output: [{ file: "dist/index.d.ts", format: "es" }],
+    output: [{ file: "dist/index.d.ts", format: "cjs" }],
     plugins: [
       dts({
         compilerOptions: {
