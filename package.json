@@ -1,7 +1,7 @@
 {
   "name": "transform-obj",
   "version": "1.0.0",
-  "description": "transform your object or datum as you want",
+  "description": "allow you to transform your datum or object",
   "private": false,
   "homepage": "https://github.com/ioofy/transform-obj",
   "repository": "https://github.com/ioofy/transform-obj",
