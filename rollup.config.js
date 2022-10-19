@@ -22,7 +22,7 @@ export default [
     ],
 
     preserveModules: true,
-    external: ["lodash"],
+    external: [],
   },
   {
     input: ["src/main.ts"],
