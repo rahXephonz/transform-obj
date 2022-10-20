@@ -1,6 +1,6 @@
 {
   "name": "transform-obj",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "allow you to transform your datum or object",
   "private": false,
   "homepage": "https://github.com/ioofy/transform-obj",
@@ -21,7 +21,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "type-fest": "^3.0.0"
+    "type-fest": "^3.0.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -42,7 +43,6 @@
     "husky": "^8.0.0",
     "jest": "^29.2.0",
     "lint-staged": "^11.2.6",
-    "lodash": "^4.17.21",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.0",
     "rollup": "^2.22.1",
