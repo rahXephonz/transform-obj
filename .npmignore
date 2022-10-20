@@ -103,6 +103,7 @@ $RECYCLE.BIN/
 
 # Utility
 src/
+.eslintrc.cjs
 .prettierrc.cjs
 commitlint.config.cjs
 jest.config.js
