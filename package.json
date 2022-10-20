@@ -16,8 +16,12 @@
   "scripts": {
     "prepare": "husky install",
     "build": "rollup -c",
+    "rebuild": "rimraf dist && yarn build",
     "dev": "yarn build --watch",
     "test": "jest"
+  },
+  "dependencies": {
+    "type-fest": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -46,7 +50,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-jest": "^29.0.3",
-    "type-fest": "^3.0.0",
     "typescript": "^4.5.2"
   },
   "lint-staged": {
