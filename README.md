@@ -48,6 +48,7 @@ const transform = transformToCamelCase(someData);
 <td>
 
 ```typescript
+// it will be transformed into
 const someData = [
   {
     id: 1,
