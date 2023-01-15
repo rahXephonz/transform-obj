@@ -4,12 +4,22 @@ import visualizer from "rollup-plugin-visualizer";
 import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 import { terser } from "rollup-plugin-terser";
 
+const lodashPackage = [
+  "lodash/transform.js",
+  "lodash/isArray.js",
+  "lodash/camelCase.js",
+  "lodash/isObject.js",
+  "lodash/kebabCase.js",
+  "lodash/snakeCase.js",
+  "lodash/upperCase.js",
+];
+
 export default [
   {
     input: ["src/main.ts"],
     output: {
       dir: "dist",
-      format: "esm",
+      format: "cjs",
       sourcemap: true,
     },
     plugins: [
@@ -21,18 +31,16 @@ export default [
         module: true,
         toplevel: false,
       }),
-      optimizeLodashImports({
-        useLodashEs: true,
-      }),
+      optimizeLodashImports(),
 
       visualizer({
         filename: "bundle-analysis.html",
-        open: process.env.ANALYZE && process.env.NODE_ENV === "development",
+        open: true,
       }),
     ],
 
     preserveModules: true,
-    external: ["lodash-es"],
+    external: ["lodash", ...lodashPackage],
   },
   {
     input: ["src/main.ts"],

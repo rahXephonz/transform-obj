@@ -1,6 +1,6 @@
 {
   "name": "transform-obj",
-  "version": "1.0.9",
+  "version": "1.0.7",
   "description": "allow you to transform your datum or object",
   "private": false,
   "homepage": "https://github.com/ioofy/transform-obj",
@@ -21,7 +21,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
+    "lodash": "^4.17.21",
     "type-fest": "^3.0.0"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@optimize-lodash/rollup-plugin": "^3.1.0",
     "@types/jest": "^29.1.2",
-    "@types/lodash-es": "^4.17.6",
+    "@types/lodash": "^4.14.186",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "commitizen": "^4.2.5",

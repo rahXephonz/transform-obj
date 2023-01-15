@@ -1,4 +1,4 @@
-import { transform, isArray, camelCase, isObject, kebabCase, snakeCase, upperCase } from "lodash-es";
+import { transform, isArray, camelCase, isObject, kebabCase, snakeCase, upperCase } from "lodash";
 import * as typeFest from "type-fest";
 
 export const transformToCamelCase = <T extends object>(obj: T): typeFest.CamelCasedPropertiesDeep<T> => {
