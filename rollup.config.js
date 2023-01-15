@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
+import visualizer from "rollup-plugin-visualizer";
 import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 import { terser } from "rollup-plugin-terser";
 
@@ -31,6 +32,11 @@ export default [
         toplevel: false,
       }),
       optimizeLodashImports(),
+
+      visualizer({
+        filename: "bundle-analyze.html",
+        open: true,
+      }),
     ],
 
     preserveModules: true,
