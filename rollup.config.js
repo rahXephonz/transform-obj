@@ -1,5 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
+import visualizer from "rollup-plugin-visualizer";
+import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 import { terser } from "rollup-plugin-terser";
 
 export default [
@@ -7,7 +9,7 @@ export default [
     input: ["src/main.ts"],
     output: {
       dir: "dist",
-      format: "cjs",
+      format: "esm",
       sourcemap: true,
     },
     plugins: [
@@ -18,6 +20,14 @@ export default [
         compress: true,
         module: true,
         toplevel: false,
+      }),
+      optimizeLodashImports({
+        useLodashEs: true,
+      }),
+
+      visualizer({
+        filename: "bundle-analysis.html",
+        open: process.env.ANALYZE && process.env.NODE_ENV === "development",
       }),
     ],
 
