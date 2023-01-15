@@ -103,6 +103,7 @@ $RECYCLE.BIN/
 
 # Utility
 src/
+.husky
 .eslintrc.cjs
 .prettierrc.cjs
 commitlint.config.cjs

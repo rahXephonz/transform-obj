@@ -21,15 +21,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "type-fest": "^3.0.0",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "type-fest": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@optimize-lodash/rollup-plugin": "^3.1.0",
     "@types/jest": "^29.1.2",
-    "@types/lodash": "^4.14.186",
+    "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "commitizen": "^4.2.5",
