@@ -9,6 +9,7 @@
 
 [![npm downloads](https://img.shields.io/npm/dw/transform-obj)](https://www.npmjs.com/package/transform-obj/v/latest)
 [![License](https://img.shields.io/github/license/ioofy/transform-obj)](https://github.com/ioofy/transform-obj/blob/main/LICENSE)
+<img id="build-badge" alt="Build badge" src="https://deno.bundlejs.com/badge?q=transform-obj%401.1.1">
 
 <!-- prettier-ignore-end -->
 
