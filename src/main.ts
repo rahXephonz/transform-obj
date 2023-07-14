@@ -1,39 +1,68 @@
-import { transform, isArray, camelCase, isObject, kebabCase, snakeCase, upperCase } from "lodash";
-import * as typeFest from "type-fest";
+import { camelCase, snakeCase, paramCase, pascalCase } from "change-case";
 
-export const transformToCamelCase = <T extends object>(obj: T): typeFest.CamelCasedPropertiesDeep<T> => {
-  const result: T = transform<T, any>(obj, (acc, value, key, target) => {
-    const camelKey = isArray(target) ? key : camelCase(key as string);
+export function transformKeys<T, DataType = T>(
+  itemObj: T,
+  transformFn: (key: string) => string,
+): T {
+  if (Array.isArray(itemObj)) {
+    return (itemObj as Array<DataType>).map(item =>
+      transformKeys<DataType>(item, transformFn),
+    ) as unknown as T;
+  } else if (typeof itemObj === "object" && itemObj !== null) {
+    const newObj = {} as Record<string, unknown>;
+    for (const key in itemObj) {
+      const newKey = transformFn(key);
+      newObj[newKey] = transformKeys(
+        (itemObj as Record<string, unknown>)[key],
+        transformFn,
+      );
+    }
+    return newObj as T;
+  }
 
-    acc[camelKey] = isObject(value) ? transformToCamelCase(value) : value;
-  });
+  return itemObj;
+}
 
-  return result as typeFest.CamelCasedPropertiesDeep<T>;
-};
+/**
+ * Transforms an object from snake_case to camelCase.
+ *
+ * @param {Object} obj - The object to be transformed
+ * @returns {Object} Any Data Type - The transformed object
+ */
 
-export const transformToKebabCase = <T extends object>(obj: T): typeFest.KebabCasedPropertiesDeep<T> => {
-  const result: T = transform<T, any>(obj, (acc, value, key, target) => {
-    const camelKey = isArray(target) ? key : kebabCase(key as string);
+export function transformToCamelCase<T>(obj: T): T {
+  return transformKeys(obj, camelCase);
+}
 
-    acc[camelKey] = isObject(value) ? transformToKebabCase(value) : value;
-  });
-  return result as typeFest.KebabCasedPropertiesDeep<T>;
-};
+/**
+ * Transforms an object from camelCase to snake_case.
+ *
+ * @param {Object} obj - The object to be transformed
+ * @returns {Object} Any Data Type - The transformed object
+ */
 
-export const transformToSnakeCase = <T extends object>(obj: T): typeFest.SnakeCasedPropertiesDeep<T> => {
-  const result: T = transform<T, any>(obj, (acc, value, key, target) => {
-    const camelKey = isArray(target) ? key : snakeCase(key as string);
+export function transformToSnakeCase<T>(obj: T): T {
+  return transformKeys(obj, snakeCase);
+}
 
-    acc[camelKey] = isObject(value) ? transformToSnakeCase(value) : value;
-  });
-  return result as typeFest.SnakeCasedPropertiesDeep<T>;
-};
+/**
+ * Transforms an object from camelCase to kebab-case.
+ *
+ * @param {Object} obj - The object to be transformed
+ * @returns {Object} Any Data Type - The transformed object
+ */
 
-export const transformToPascalCase = <T extends object>(obj: T): typeFest.PascalCasedPropertiesDeep<T> => {
-  const result: T = transform<T, any>(obj, (acc, value, key, target) => {
-    const camelKey = isArray(target) ? key : upperCase(key as string).replace(/ /g, "_");
+export function transformToKebabCase<T>(obj: T): T {
+  return transformKeys(obj, paramCase);
+}
 
-    acc[camelKey] = isObject(value) ? transformToPascalCase(value) : value;
-  });
-  return result as typeFest.PascalCasedPropertiesDeep<T>;
-};
+/**
+ * Transforms an object from any case into PascalCase.
+ *
+ * @param {Object} obj - The object to be transformed
+ * @returns {Object} Any Data Type - The transformed object
+ */
+
+export function transformToPascalCase<T>(obj: T): T {
+  return transformKeys(obj, pascalCase);
+}

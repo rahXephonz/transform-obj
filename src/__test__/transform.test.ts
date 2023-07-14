@@ -1,4 +1,9 @@
-import { transformToCamelCase, transformToKebabCase, transformToSnakeCase, transformToPascalCase } from "../main";
+import {
+  transformToCamelCase,
+  transformToKebabCase,
+  transformToSnakeCase,
+  transformToPascalCase,
+} from "../main";
 
 const dataSampleOne = [
   {
@@ -51,8 +56,8 @@ describe("transform-obj utility", () => {
   test("Transform To PascalCase", () => {
     const expectedResult = [
       {
-        ID: 1,
-        STATUS_AVALIABLE_ONLINE: true,
+        Id: 1,
+        StatusAvaliableOnline: true,
       },
     ];
 

@@ -1,6 +1,6 @@
 {
   "name": "transform-obj",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "allow you to transform your datum or object",
   "private": false,
   "homepage": "https://github.com/ioofy/transform-obj",
@@ -15,21 +15,18 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "build": "rollup -c",
+    "build": "tsup src/main.ts",
     "rebuild": "rimraf dist && yarn build",
     "dev": "yarn build --watch",
     "test": "jest"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "type-fest": "^3.0.0"
+    "change-case": "4.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@optimize-lodash/rollup-plugin": "^3.1.0",
     "@types/jest": "^29.1.2",
-    "@types/lodash": "^4.14.186",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "commitizen": "^4.2.5",
@@ -45,12 +42,8 @@
     "lint-staged": "^11.2.6",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.0",
-    "rollup": "^2.22.1",
-    "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "rollup-plugin-visualizer": "^5.9.0",
     "ts-jest": "^29.0.3",
+    "tsup": "^7.0.0",
     "typescript": "^4.5.2"
   },
   "lint-staged": {
