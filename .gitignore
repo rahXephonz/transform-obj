@@ -100,6 +100,3 @@ $RECYCLE.BIN/
 
 # Cache
 .eslintcache
-
-#Build
-bundle-analyze.html

@@ -11,11 +11,13 @@
   "keywords": [
     "transform",
     "transform-obj",
-    "datum"
+    "datum",
+    "object",
+    "object transform"
   ],
   "scripts": {
     "prepare": "husky install",
-    "build": "tsup src/main.ts",
+    "build": "tsup",
     "rebuild": "rimraf dist && yarn build",
     "dev": "yarn build --watch",
     "test": "jest"

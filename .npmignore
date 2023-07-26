@@ -140,3 +140,4 @@ tsup.config.ts
 tsconfig.json
 .gitignore
 .eslintignore
+.husky
